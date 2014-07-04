@@ -1,0 +1,322 @@
+<!doctype>
+
+<html>
+
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+	<script type='text/javascript' src='jquery.min.js'></script>
+	<script type='text/javascript' src='script.js'></script>
+	<meta charset="UTF-8">
+	<script src="d3.v3.min.js"></script>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<title>Aakash Thumaty</title>
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+			font-family: 'Raleway', sans-serif;
+			background-color: white;
+		}
+
+		#banner {
+			width: 100%;
+			height: 800px;
+			background-image: url("background.png");
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: relative;
+		}
+
+		#navbar {
+			width: 100%;
+			height: 90px;
+			display:block;
+			position: fixed;
+			z-index: 100;
+			background-color: rgba(250, 250, 250, 0.0);
+			-webkit-transition: .5s all;
+			-moz-transition: .5s all;
+			-o-transition: .5s all;
+			transition: .5s all;
+		}
+
+		#navbar-container {
+			width: 1100px;
+			height: 90px;
+			margin: 0 auto;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			font-family: 'Open Sans', sans-serif;
+			line-height: 20px;
+			font-weight: 600;
+
+		}
+
+		#name {
+			color: white;
+			text-transform: uppercase;
+			padding-top: 15px;
+			font-size: 18px;
+			float: left;
+			-webkit-transition: .5s all;
+			-moz-transition: .5s all;
+			-o-transition: .5s all;
+			transition: .5s all;
+		}
+
+		#menulist {
+			float: right;
+			list-style: none;
+			display: inline;
+			margin-top: 35px;
+			-webkit-transition: .5s all;
+			-moz-transition: .5s all;
+			-o-transition: .5s all;
+			transition: .5s all;
+			color: rgba(245, 245, 245, 0.0);
+		}
+		#menulist li{
+			display: block;
+			float: left;
+			font-size: 12px;
+		}
+
+		a.menu-item {
+			padding: 20px;
+			-webkit-transition: .2s all;
+			-moz-transition: .2s all;
+			-o-transition: .2s all;
+			transition: .2s all;
+
+		}
+
+		a.menu-item:hover{
+			text-decoration: none;
+			opacity: 0.3;
+		}
+
+		a.menu-item:link{
+			text-decoration: none;
+			color: rgba(245, 245, 245, 0.9);
+		}
+
+		a.menu-item:visited{
+			text-decoration: none;
+			color: rgba(245, 245, 245, 0.9);
+		}
+
+		#intro {
+			width: 450px;
+			height: 420px;
+			margin: auto;
+  			position: absolute;
+  			top: 0; left: 0; bottom: 0; right: 0;
+
+		}
+
+		.section-container {
+			width: 1100px;
+			margin: 0 auto;
+		}
+
+		.title {
+			margin: 0;
+			padding: 0;
+			font-size: 40px;
+			color: black;
+			text-align: center;
+			padding-top: 70px;
+		}
+
+		.info {
+			margin: 0;
+			padding: 0;
+			font-size: 24px;
+			color: black;
+			text-align: left;
+			padding-top: 20px;
+			line-height: 35px;
+			float:left;
+			width: 850px;
+			margin-top: 20px;
+		}
+				
+		.label {
+
+			font-size: 24px;
+			color: black;
+			text-align: center;
+			width: 50px;
+		}
+		
+
+
+		#about-section {
+			width: 100%;
+			height: 400px;
+			background-color: white;
+		}
+
+		#Projects-section {
+			width: 100%;
+			height: 750px;
+			background-color: rgb(240, 240, 240);
+		}
+
+		#experience-section {
+			width: 100%;
+			height: 450px;
+			background-color: white;
+		}
+		
+		#contact-section {
+			width: 100%;
+			height: 250px;
+			background-color: rgb(240, 240, 240);
+			color: white;
+
+		}
+
+		a:link {
+			text-decoration: none;
+			color: steelblue;
+		}
+
+		a:visited {
+			text-decoration: none;
+			color: steelblue;
+		}
+
+		.Projects-icons {
+			height: 200px;
+			border-radius: 40px;
+			margin: 35px;
+			-webkit-transition: all 0.5s ease;
+     		-moz-transition: all 0.5s ease;
+      	 	-o-transition: all 0.5s ease;
+      		-ms-transition: all 0.5s ease;
+          	transition: all 0.5s ease;
+		}
+
+.Projects-icons:hover {
+  border-radius: 50%;
+  -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+       -o-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+		.contact-icons {
+			margin: 20px;
+		}
+
+		.contact-icons:hover {
+			opacity: 0.5;
+			-webkit-transition: .5s all;
+			-moz-transition: .5s all;
+			-o-transition: .5s all;
+			transition: .5s all;
+		}
+
+		#foot{
+			width: 100%;
+			height: 100px;
+		}
+
+		#foot p{
+			text-align: center;
+			margin:0;
+			font-size:24px;
+			color:gray;
+			padding-top:35px;
+
+		}
+		
+	</style>
+</head>
+
+<body>
+	<div id = "navbar">
+		<div id = "navbar-container">
+			<a href = ""><p id = "name">Aakash Thumaty</p></a>
+			<ul id = "menulist">
+				<li><a class = "menu-item" id = "item1" href = "#about-section">About</a></li>
+				<li><a class = "menu-item" id = "item2" href = "#Projects-section">Projects</a></li>
+				<li><a class = "menu-item" id = "item3" href = "#experience-section">Experience</a></li>
+				<li><a class = "menu-item" id = "item4" href = "#contact-section">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id = "banner">
+		<div id = "intro">
+			<center><div style = "width: 200px; margin: 0 auto;" ><img  style = "border-radius: 200px;" src = "profile1.png" height = "150"/></div>
+			<p style = "text-align: center; font-size: 40px; font-weight: 600; color: white; letter-spacing: 1px; margin-bottom: 5px;">Aakash Thumaty<p></center>
+			<p style = "text-align: center; font-size: 24px; font-weight: 600; color: white;"><p>
+		</div>
+	</div>
+
+	<div id = "about-section">
+		<div class = "section-container">
+			<p class = "title">About</p>
+			<p class = "info">I go poo.
+			</p>
+			<img src = "profile.jpg" style = "border-radius: 200px; height: 200px; float:left; margin-left: 20px; margin-top: 40px;"/>		
+		</div>
+	</div>
+
+	<div id = "Projects-section">
+		<div class = "section-container">
+			<p class = "title">Projects</p>
+
+			<a href = ""><img class = "Projects-icons" src = "anon.png"/></a>
+			<a href = "https://itunes.apple.com/us/app/hshacks/id827168843?mt=8"><img class = "Projects-icons" src = "hshacks.png"/></a>
+			<a href = "http://vybeapp.com/"><img class = "Projects-icons" src = "vybe.png"/></a>
+			<a href = "https://itunes.apple.com/us/app/colors-a-game-about-mixing/id825984083?mt=8"><img class = "Projects-icons" src = "colors.png"/></a>
+			<a href = "http://vicinitime.com/"><img class = "Projects-icons" src = "vicinitime.png"/></a>
+			<a href = "https://www.hackerleague.org/hackathons/hacktech/hacks/bluetune"><img class = "Projects-icons" src = "bluetune.png"/></a>
+			<a href = ""><img class = "Projects-icons" src = "flappyextreme.png"/></a>
+			<a href = ""><img class = "Projects-icons" src = "default.png"/></a>
+
+		</div>
+	</div>
+	
+		<div id = "experience-section">
+		<div class = "section-container">
+			<p class = "title">Experience</p>
+
+				<a href = "https://www.makegameswith.us/home/"><img class = "Projects-icons" src = "mgwu.png"/></a>
+				<a href = "http://www.fwd.us/"><img class = "Projects-icons" src = "fwd.png"/></a>
+				<a href = "http://belimitless.co/"><img class = "Projects-icons" src = "limitless.png"/></a>
+				<a href = "https://www.everalbum.com/"><img class = "Projects-icons" src = "everalbum.png"/></a>
+
+
+
+		</div>
+	</div>
+
+	<div id = "contact-section">
+		<div class = "section-container">
+			<p class = "title">Contact</p>
+			<div style = "width:320px; margin: 0 auto; margin-top:20px;">
+			<center>
+				<a href = "https://twitter.com/AakashMBoss"><img class = "contact-icons" src = "twitter.png"/></a>
+				<a href = "https://www.linkedin.com/pub/aakash-thumaty/87/97/b98"><img class = "contact-icons" src = "linkedin.png"/></a>
+				<a href = "mailto:aakashthumaty@gmail.com"><img class = "contact-icons" src = "email.png"/></a>
+				</center>
+			</div>
+		</div>
+	</div>
+
+	<footer id = "foot">
+		<p>&copy Aakash Thumaty</p>
+	</footer>
+
+
+</body>
+
+</html>
