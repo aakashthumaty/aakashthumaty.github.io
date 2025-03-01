@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Website</title>
+    <title>Aakash Thumaty - Personal Website</title>
     <style>
-        /* Base styles with brutalist principles */
+        /* Base styles with less boxy brutalist principles */
         :root {
             --bg-color: #f2f2f2;
             --text-color: #222222;
@@ -31,15 +31,23 @@
             padding: 2rem;
             max-width: 800px;
             margin: 0 auto;
-            border-left: 4px solid var(--border-color);
-            border-right: 4px solid var(--border-color);
             min-height: 100vh;
         }
         
         header {
-            margin-bottom: 2rem;
-            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 3rem;
             padding-bottom: 1rem;
+            position: relative;
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-color);
         }
         
         h1, h2, h3 {
@@ -55,9 +63,19 @@
         
         h2 {
             font-size: 1.8rem;
-            border-top: 2px solid var(--border-color);
-            padding-top: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
             margin-top: 3rem;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
         }
         
         p {
@@ -68,15 +86,30 @@
         a {
             color: var(--link-color);
             text-decoration: none;
-            border-bottom: 2px solid var(--link-color);
             transition: all 0.2s ease;
             padding: 0 0.2rem;
+            position: relative;
         }
         
         a:hover {
+            color: var(--link-hover);
+        }
+        
+        a::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
             background-color: var(--link-hover);
-            color: white;
-            border-bottom: 2px solid var(--link-hover);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        a:hover::after {
+            transform: scaleX(1);
         }
         
         ul {
@@ -85,16 +118,27 @@
         }
         
         li {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             padding-left: 1rem;
-            border-left: 3px solid var(--accent-color);
+            position: relative;
+        }
+        
+        li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 3px;
+            height: calc(100% - 0.5rem);
+            background-color: var(--accent-color);
+            opacity: 0.7;
         }
         
         .profile-container {
             display: flex;
             align-items: center;
-            margin-bottom: 2rem;
-            gap: 2rem;
+            margin-bottom: 2.5rem;
+            gap: 2.5rem;
             flex-wrap: wrap;
         }
         
@@ -102,9 +146,8 @@
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            border: 3px solid var(--border-color);
             object-fit: cover;
-            box-shadow: 5px 5px 0px var(--accent-color);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         .intro {
@@ -113,20 +156,22 @@
         }
         
         .section {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
         
         .achievement-item, .writing-item {
             display: block;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            border: 2px solid var(--border-color);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
             transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.05);
         }
         
         .achievement-item:hover, .writing-item:hover {
             transform: translateX(5px);
-            border-color: var(--secondary-color);
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .achievement-title, .writing-title {
@@ -134,36 +179,108 @@
             display: block;
             margin-bottom: 0.5rem;
             font-size: 1.2rem;
+            color: var(--secondary-color);
         }
         
         .social-links {
             display: flex;
             gap: 1rem;
-            margin: 1rem 0 2rem 0;
+            margin: 1.5rem 0 2.5rem 0;
             flex-wrap: wrap;
         }
         
         .social-link {
             padding: 0.5rem 1rem;
-            border: 2px solid var(--border-color);
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.2s ease;
+            background-color: rgba(255, 255, 255, 0.5);
         }
         
         .social-link:hover {
             background-color: var(--accent-color);
             color: white;
-            border-color: var(--accent-color);
+        }
+        
+        .social-link:hover::after {
+            transform: scaleX(0);
+        }
+        
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0 3rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .work-exp-item {
+            display: block;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .work-exp-item:hover {
+            transform: translateX(5px);
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         footer {
-            margin-top: 4rem;
+            margin-top: 5rem;
             padding-top: 1rem;
-            border-top: 2px solid var(--border-color);
             text-align: center;
             font-size: 0.9rem;
+            position: relative;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .experience-details {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.3rem;
         }
         
         @media (max-width: 600px) {
@@ -184,79 +301,180 @@
             li {
                 padding-left: 0.5rem;
             }
+            
+            header::after, h2::after, footer::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>YOUR NAME</h1>
+        <h1>Aakash Thumaty</h1>
     </header>
     
     <main>
         <div class="profile-container">
             <img class="profile-pic" src="/api/placeholder/400/400" alt="Profile Picture">
-            <div class="intro">
-                <p>Hello! I'm a [your profession] based in [your location]. I specialize in [your specialty], with a passion for [your passion]. When I'm not [your profession-related activity], you can find me [your hobby].</p>
-                <p>Currently working on [current project] and always open to interesting collaborations and conversations.</p>
+<!--             <div class="intro">
+                <p>Hello! I'm a Product Leader based in the Bay Area. I specialize in building 0 to 1 products, with a passion for applied AI. When I'm not building products, you can find me working on side projects or teaching.</p>
+                <p>Currently working as a Group Product Manager at Flexible Finance and always open to interesting collaborations and conversations.</p>
+            </div> -->
+	<div class="intro">
+                <p>Hello, my name is Aakash. I have been programming since I was a kid, love building things (who doesn't), and am often told I talk too fast. What gets me going is building things that people use.</p>
+                <p>Currently working on fine-tuning models for internal business functions (incredibly vague, I know), reach out and I'd love to tell you more (my focus changes frequently so you never know what you'll get). My "background" spans enterprise SAAS (Stripe, Salesforce), Finance/Crypto (Jump Trading, Wormhole Labs), Consumer (Flexible Finance, Zynga, Restaurant POS/order-ahead softeare, a series of mobile apps I've released on my own), and Robotics (not really, I made a single Youtube video). </p>
             </div>
         </div>
         
         <div class="social-links">
-            <a href="https://linkedin.com/in/yourusername" class="social-link">LinkedIn</a>
-            <a href="https://docs.google.com/document/d/yourresumeid" class="social-link">Resume</a>
-            <a href="https://twitter.com/yourusername" class="social-link">Twitter</a>
-            <a href="mailto:your.email@example.com" class="social-link">Email</a>
+            <a href="https://linkedin.com/in/aakashthumaty" class="social-link">LinkedIn</a>
+            <a href="mailto:aakashthumaty@gmail.com" class="social-link">Email</a>
+            <a href="https://twitter.com/aakashthumaty" class="social-link">Twitter</a>
+            <a href="tel:+14086216172" class="social-link">Contact</a>
         </div>
         
-        <div class="section">
-            <h2>Achievements</h2>
+        <nav class="nav-bar">
+            <a href="#work" class="nav-link">Work</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#writings" class="nav-link">Writing</a>
+        </nav>
+        
+        <div id="work" class="section">
+            <h2>Work Experience</h2>
             <ul>
                 <li>
-                    <a href="https://twitter.com/yourusername/status/123456789" class="achievement-item">
-                        <span class="achievement-title">Hackathon Winner - Project Name</span>
-                        Won first place at [Hackathon Name] for creating an innovative solution to [problem].
+                    <div class="work-exp-item">
+                        <span class="achievement-title">Group Product Manager, Applied AI - Flexible Finance</span>
+                        Launched Credit Builder in the first 8 weeks, from 0 to 1 and currently at a 7 figure ARR. Working on our second product under the Flex umbrella while exploring AI-based tools to enhance business efficiency.
+                        <div class="experience-details">April 2024 - Present</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-exp-item">
+                        <span class="achievement-title">Product Lead, CPO - Jump Trading / Wormhole Labs</span>
+                        First PM on Jump Crypto, led Wormhole product development and build out of the developer platform. Increased active developers by 500% and daily txn volume from $1M to $40M USD. Co-Founded Wormhole Labs and served as CPO.
+                        <div class="experience-details">Dec 2022 - Feb 2024</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-exp-item">
+                        <span class="achievement-title">Product Lead, Crypto | Money Movement - Stripe</span>
+                        Founding PM on the crypto team, led/designed all 4 major projects including crypto payouts, Onramp, Payins, and Wallets. Led product for liquidity/policy engine and banking integrations within Money Movement org.
+                        <div class="experience-details">Dec 2020 - Dec 2022</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-exp-item">
+                        <span class="achievement-title">Associate Product Manager - Salesforce (Customer Data Platform)</span>
+                        Built a unified customer data platform and data collection SDKs across disparate sources for the CDP. Enabled targeted collection and novel structuring of actionable customer data through web APIs.
+                        <div class="experience-details">July 2020 - Dec 2020</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-exp-item">
+                        <span class="achievement-title">Founder - MealPlan</span>
+                        Launched cross-platform software suite with $4,800+ in weekly recurring revenue & 1,000+ active users in public beta. Signed 12 restaurant partners via walk-ins and grew MAU retention to 70%.
+                        <div class="experience-details">March 2018 - Nov 2019</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-exp-item">
+                        <span class="achievement-title">Associate Product Manager - Salesforce (Einstein Analytics)</span>
+                        Shipped live data explorer for real-time queries across data silos in Einstein Analytics. Designed, roadmapped, and built semantic search MVP using natural language queries.
+                        <div class="experience-details">May - Aug 2019</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-exp-item">
+                        <span class="achievement-title">Product Management - Microsoft Teams</span>
+                        Shipped intelligent, chat-engagement experiments with team of 8 engineers, researchers, and designers. Developed model to power user- and context-specific conversational prompts.
+                        <div class="experience-details">May - Aug 2018</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-exp-item">
+                        <span class="achievement-title">Machine Learning Researcher - Duke Medicine (Bioinformatics Dept.)</span>
+                        Built a predictive model for Schizophrenia readmission rates + prescription efficacy to reduce healthcare expenditures.
+                        <div class="experience-details">Aug 2018 - May 2019</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-exp-item">
+                        <span class="achievement-title">Software Engineering - Zynga (Farmville)</span>
+                        Developed reusable full-stack framework for recurring events throughout game cycle. Implemented various full-stack game features for Farmville: Tropic Escape.
+                        <div class="experience-details">May - Aug 2016</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="work-exp-item">
+                        <span class="achievement-title">Software Engineering - Atomic Labs (Ever AI)</span>
+                        Implemented location based photo search, refactored sharing UI, increased engagement using Optimizely. Shipped sharing and usability features.
+                        <div class="experience-details">May - Aug 2015</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="projects" class="section">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <a href="https://bit.ly/kaizen-announcement" class="writing-item">
+                        <span class="writing-title">Kaizen - 1st Place @ OpenAI x A16Z x 11Labs Consumer Hackathon</span>
+                        Built a computer vision based open world RPG with an LLM powered NPC framework for contextual RPG interactions.
+                        <div class="experience-details">November 2024</div>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="achievement-item">
-                        <span class="achievement-title">Speaker at [Conference Name]</span>
-                        Presented a talk on "[Talk Title]" discussing the implications of [topic].
+                    <a href="https://apps.apple.com/us/app/sculptai/id1234567890" class="writing-item">
+                        <span class="writing-title">SculptAI</span>
+                        Fine-tuned GPT to accurately tell you the nutritional breakdown of meals through a photo and give you an accurate estimate of body composition based on a few photos and manual info.
+                        <div class="experience-details">2024</div>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="achievement-item">
-                        <span class="achievement-title">Published in [Publication Name]</span>
-                        Article titled "[Article Title]" on the future of [industry/topic].
+                    <a href="https://bit.ly/pokelure" class="writing-item">
+                        <span class="writing-title">POKELURE</span>
+                        Reverse engineered Niantics' client/backend relationship to retrieve and re-map hidden game data. 85k+ installs.
+                        <div class="experience-details">2016</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://bit.ly/gettimelyapp" class="writing-item">
+                        <span class="writing-title">TIMELY</span>
+                        Built time-based location recommendation and schedule planning app using Google Maps & Foursquare APIs. 10k installs and featured in HackerNews and Business Insider.
+                        <div class="experience-details">2016</div>
                     </a>
                 </li>
             </ul>
         </div>
         
-        <div class="section">
+        <div id="writings" class="section">
             <h2>Writings</h2>
             <ul>
                 <li>
                     <a href="#" class="writing-item">
-                        <span class="writing-title">The Future of [Industry/Topic]</span>
-                        An exploration of emerging trends and predictions for the next decade.
+                        <span class="writing-title">The Future of Product Development</span>
+                        An exploration of how AI is reshaping product development and predictions for the next decade.
                     </a>
                 </li>
                 <li>
                     <a href="#" class="writing-item">
-                        <span class="writing-title">How I Built [Project Name]</span>
-                        A deep dive into the technical challenges and solutions behind my recent project.
+                        <span class="writing-title">Building Products from 0 to 1</span>
+                        A deep dive into the frameworks and methodologies I use when building new products.
                     </a>
                 </li>
                 <li>
                     <a href="#" class="writing-item">
-                        <span class="writing-title">Lessons Learned from [Experience]</span>
-                        Reflections and insights gained from my journey through [specific experience].
+                        <span class="writing-title">Lessons from My Time at Stripe</span>
+                        Reflections and insights gained from my journey as the youngest PM at Stripe.
                     </a>
                 </li>
                 <li>
                     <a href="#" class="writing-item">
-                        <span class="writing-title">A Guide to [Topic]</span>
-                        A comprehensive breakdown of everything you need to know about [topic].
+                        <span class="writing-title">Building in Web3: A Product Manager's Perspective</span>
+                        A comprehensive breakdown of the challenges and opportunities in building web3 products.
                     </a>
                 </li>
             </ul>
@@ -264,10 +482,16 @@
     </main>
     
     <footer>
-        <p>© 2025 Your Name. Built with HTML, CSS, and brutalist principles.</p>
+        <p>© 2025 Aakash Thumaty. Built with HTML, CSS, and brutalist principles.</p>
     </footer>
 </body>
 </html>
+
+
+
+
+
+
 
 
 
