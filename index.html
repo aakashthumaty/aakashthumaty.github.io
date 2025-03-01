@@ -1,4 +1,278 @@
-<!doctype>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Website</title>
+    <style>
+        /* Base styles with brutalist principles */
+        :root {
+            --bg-color: #f2f2f2;
+            --text-color: #222222;
+            --accent-color: #637074;
+            --secondary-color: #8b5a50;
+            --tertiary-color: #424b54;
+            --link-color: #5f7470;
+            --link-hover: #8b5a50;
+            --border-color: #000000;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: "Courier New", monospace;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            border-left: 4px solid var(--border-color);
+            border-right: 4px solid var(--border-color);
+            min-height: 100vh;
+        }
+        
+        header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+        
+        h1, h2, h3 {
+            font-weight: bold;
+            margin: 1.5rem 0 1rem 0;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            border-top: 2px solid var(--border-color);
+            padding-top: 1rem;
+            margin-top: 3rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            border-bottom: 2px solid var(--link-color);
+            transition: all 0.2s ease;
+            padding: 0 0.2rem;
+        }
+        
+        a:hover {
+            background-color: var(--link-hover);
+            color: white;
+            border-bottom: 2px solid var(--link-hover);
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 1rem 0 2rem 0;
+        }
+        
+        li {
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .profile-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid var(--border-color);
+            object-fit: cover;
+            box-shadow: 5px 5px 0px var(--accent-color);
+        }
+        
+        .intro {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        .achievement-item, .writing-item {
+            display: block;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-item:hover, .writing-item:hover {
+            transform: translateX(5px);
+            border-color: var(--secondary-color);
+        }
+        
+        .achievement-title, .writing-title {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .social-link {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--border-color);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+        
+        footer {
+            margin-top: 4rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--border-color);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .profile-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            li {
+                padding-left: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>YOUR NAME</h1>
+    </header>
+    
+    <main>
+        <div class="profile-container">
+            <img class="profile-pic" src="/api/placeholder/400/400" alt="Profile Picture">
+            <div class="intro">
+                <p>Hello! I'm a [your profession] based in [your location]. I specialize in [your specialty], with a passion for [your passion]. When I'm not [your profession-related activity], you can find me [your hobby].</p>
+                <p>Currently working on [current project] and always open to interesting collaborations and conversations.</p>
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://linkedin.com/in/yourusername" class="social-link">LinkedIn</a>
+            <a href="https://docs.google.com/document/d/yourresumeid" class="social-link">Resume</a>
+            <a href="https://twitter.com/yourusername" class="social-link">Twitter</a>
+            <a href="mailto:your.email@example.com" class="social-link">Email</a>
+        </div>
+        
+        <div class="section">
+            <h2>Achievements</h2>
+            <ul>
+                <li>
+                    <a href="https://twitter.com/yourusername/status/123456789" class="achievement-item">
+                        <span class="achievement-title">Hackathon Winner - Project Name</span>
+                        Won first place at [Hackathon Name] for creating an innovative solution to [problem].
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="achievement-item">
+                        <span class="achievement-title">Speaker at [Conference Name]</span>
+                        Presented a talk on "[Talk Title]" discussing the implications of [topic].
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="achievement-item">
+                        <span class="achievement-title">Published in [Publication Name]</span>
+                        Article titled "[Article Title]" on the future of [industry/topic].
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Writings</h2>
+            <ul>
+                <li>
+                    <a href="#" class="writing-item">
+                        <span class="writing-title">The Future of [Industry/Topic]</span>
+                        An exploration of emerging trends and predictions for the next decade.
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="writing-item">
+                        <span class="writing-title">How I Built [Project Name]</span>
+                        A deep dive into the technical challenges and solutions behind my recent project.
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="writing-item">
+                        <span class="writing-title">Lessons Learned from [Experience]</span>
+                        Reflections and insights gained from my journey through [specific experience].
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="writing-item">
+                        <span class="writing-title">A Guide to [Topic]</span>
+                        A comprehensive breakdown of everything you need to know about [topic].
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2025 Your Name. Built with HTML, CSS, and brutalist principles.</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+<!-- <!doctype>
 
 <html>
 
@@ -320,3 +594,4 @@
 </body>
 
 </html>
+ -->
