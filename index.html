@@ -27,16 +27,17 @@
             font-family: "Courier New", monospace;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
-            padding: 2rem;
+            line-height: 1.5;
+            padding: 1.5rem;
             max-width: 800px;
             margin: 0 auto;
             min-height: 100vh;
+            font-size: 0.95rem;
         }
         
         header {
-            margin-bottom: 3rem;
-            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 0.8rem;
             position: relative;
         }
         
@@ -45,27 +46,28 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100px;
-            height: 4px;
+            width: 80px;
+            height: 3px;
             background-color: var(--accent-color);
         }
         
         h1, h2, h3 {
             font-weight: bold;
-            margin: 1.5rem 0 1rem 0;
+            margin: 1.2rem 0 0.8rem 0;
             text-transform: uppercase;
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             letter-spacing: -1px;
+            margin-bottom: 0.5rem;
         }
         
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             position: relative;
             padding-bottom: 0.5rem;
-            margin-top: 3rem;
+            margin-top: 2.5rem;
         }
         
         h2::after {
@@ -73,14 +75,14 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 60px;
-            height: 3px;
+            width: 50px;
+            height: 2px;
             background-color: var(--secondary-color);
         }
         
         p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
         }
         
         a {
@@ -114,12 +116,12 @@
         
         ul {
             list-style-type: none;
-            margin: 1rem 0 2rem 0;
+            margin: 0.8rem 0 1.5rem 0;
         }
         
         li {
-            margin-bottom: 1.5rem;
-            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+            padding-left: 0.8rem;
             position: relative;
         }
         
@@ -127,9 +129,9 @@
             content: "";
             position: absolute;
             left: 0;
-            top: 0.5rem;
-            width: 3px;
-            height: calc(100% - 0.5rem);
+            top: 0.4rem;
+            width: 2px;
+            height: calc(100% - 0.4rem);
             background-color: var(--accent-color);
             opacity: 0.7;
         }
@@ -137,17 +139,17 @@
         .profile-container {
             display: flex;
             align-items: center;
-            margin-bottom: 2.5rem;
-            gap: 2.5rem;
+            margin-bottom: 2rem;
+            gap: 2rem;
             flex-wrap: wrap;
         }
         
         .profile-pic {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
         }
         
         .intro {
@@ -156,46 +158,47 @@
         }
         
         .section {
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
         
         .achievement-item, .writing-item {
             display: block;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1.2rem;
             transition: all 0.3s ease;
             background-color: rgba(255, 255, 255, 0.5);
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.05);
         }
         
         .achievement-item:hover, .writing-item:hover {
             transform: translateX(5px);
             background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         .achievement-title, .writing-title {
             font-weight: bold;
             display: block;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
             color: var(--secondary-color);
         }
         
         .social-links {
             display: flex;
-            gap: 1rem;
-            margin: 1.5rem 0 2.5rem 0;
+            gap: 0.8rem;
+            margin: 0.5rem 0 1rem 0;
             flex-wrap: wrap;
         }
         
         .social-link {
-            padding: 0.5rem 1rem;
+            padding: 0.3rem 0.8rem;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.2s ease;
             background-color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
         }
         
         .social-link:hover {
@@ -210,9 +213,9 @@
         .nav-bar {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0 3rem 0;
-            padding: 1rem 0;
+            gap: 1.5rem;
+            margin: 1.5rem 0 2.5rem 0;
+            padding: 0.8rem 0;
             border-top: 1px solid rgba(0, 0, 0, 0.1);
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
@@ -222,8 +225,9 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             position: relative;
-            padding: 0.5rem 1rem;
+            padding: 0.3rem 0.8rem;
             transition: all 0.3s ease;
+            font-size: 0.85rem;
         }
         
         .nav-link::after {
@@ -245,24 +249,24 @@
         
         .work-exp-item {
             display: block;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1.2rem;
             transition: all 0.3s ease;
             background-color: rgba(255, 255, 255, 0.5);
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.05);
         }
         
         .work-exp-item:hover {
             transform: translateX(5px);
             background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         footer {
-            margin-top: 5rem;
-            padding-top: 1rem;
+            margin-top: 4rem;
+            padding-top: 0.8rem;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             position: relative;
         }
         
@@ -272,20 +276,44 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 40px;
+            width: 30px;
             height: 2px;
             background-color: var(--accent-color);
         }
         
         .experience-details {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             opacity: 0.8;
             margin-top: 0.3rem;
         }
         
+        .company-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .company-logo {
+            height: 40px;
+            width: auto;
+            filter: grayscale(70%);
+            transition: filter 0.3s ease, transform 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .company-logo:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+            opacity: 1;
+        }
+        
         @media (max-width: 600px) {
             body {
-                padding: 1rem;
+                padding: 0.8rem;
+                font-size: 0.9rem;
             }
             
             .profile-container {
@@ -306,12 +334,26 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
+            
+            .company-logos {
+                gap: 1rem;
+            }
+            
+            .company-logo {
+                height: 30px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Aakash Thumaty</h1>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/aakash-thumaty-b9809787/" class="social-link">LinkedIn</a>
+            <a href="mailto:aakashthumaty@gmail.com" class="social-link">Email</a>
+            <a href="https://x.com/letsleverup" class="social-link">Twitter</a>
+            <a href="tel:+14086216172" class="social-link">Text</a>
+        </div>
     </header>
     
     <main>
@@ -327,11 +369,12 @@
             </div>
         </div>
         
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/aakash-thumaty-b9809787/" class="social-link">LinkedIn</a>
-            <a href="mailto:aakashthumaty@gmail.com" class="social-link">Email</a>
-            <a href="https://x.com/letsleverup" class="social-link">Twitter</a>
-            <a href="tel:+14086216172" class="social-link">Text</a>
+        <div class="company-logos">
+            <img src="/api/placeholder/120/40" alt="Stripe Logo" class="company-logo">
+            <img src="/api/placeholder/120/40" alt="Jump Trading Logo" class="company-logo">
+            <img src="/api/placeholder/120/40" alt="Salesforce Logo" class="company-logo">
+            <img src="/api/placeholder/120/40" alt="Flexible Finance Logo" class="company-logo">
+            <img src="/api/placeholder/120/40" alt="Zynga Logo" class="company-logo">
         </div>
         
         <nav class="nav-bar">
@@ -484,12 +527,25 @@
     <footer>
         <p>© 2025 Aakash Thumaty. Built with HTML, CSS, and brutalist principles.</p>
     </footer>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-
-
 
 
 
